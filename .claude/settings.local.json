@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c \"import yfinance, pandas, numpy, matplotlib, sklearn, scipy; print\\('all ok'\\)\" 2>&1)",
+      "Bash(pip3 install yfinance pandas numpy matplotlib scikit-learn scipy -q 2>&1 | tail -5)",
+      "Bash(python3 -c \"import matplotlib; print\\(matplotlib.matplotlib_fname\\(\\)\\)\")",
+      "Bash(fc-list :lang=zh)",
+      "Bash(python3 -c \"\nimport matplotlib.font_manager as fm\nfonts = [f.name for f in fm.fontManager.ttflist]\nchinese = [f for f in fonts if any\\(c in f.lower\\(\\) for c in ['heiti','songti','kaiti','hei','ping','noto','cjk','chinese','han','gothic']\\)]\nprint\\(sorted\\(set\\(chinese\\)\\)\\)\n\")",
+      "Bash(rm -rf ~/.cache/matplotlib && python3 notebooks/poland_stock_analysis.py 2>&1 | grep -v \"findfont\\\\|Font family\\\\|building the font\")"
+    ]
+  }
+}
